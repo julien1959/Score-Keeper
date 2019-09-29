@@ -19,7 +19,7 @@ function insertScoreP1IntoSpan0() {
     scorePlayer1.insertAdjacentText("afterbegin", scoreP1);
 }
 
-function modifyScorePlayer1() {
+function displayScorePlayer1() {
     if (scoreP1 < scoreMax) {
         scoreP1++
         scorePlayer1.textContent = scoreP1;
@@ -32,7 +32,7 @@ function insertScoreP2IntoSpan1() {
     scorePlayer2.insertAdjacentText("afterbegin", scoreP2);
 }
 
-function modifyScorePlayer2() {
+function displayScorePlayer2() {
     if (scoreP2 < scoreMax) {
         scoreP2++
         scorePlayer2.textContent = scoreP2;
@@ -41,9 +41,11 @@ function modifyScorePlayer2() {
 
 // RESET
 
-function () {
-    
+function scoreReset() {
+    scorePlayer1.textContent = (scoreP1 = 0);
+    scorePlayer2.textContent = (scoreP2 = 0);
 }
 
-buttonPlayer1.addEventListener("click", modifyScorePlayer1);
-buttonPlayer2.addEventListener("click", modifyScorePlayer2);
+buttonPlayer1.addEventListener("click", displayScorePlayer1);
+buttonPlayer2.addEventListener("click", displayScorePlayer2);
+buttonReset.addEventListener("click", scoreReset);
