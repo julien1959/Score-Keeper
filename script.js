@@ -39,5 +39,11 @@ function modifyScorePlayer2() {
     }
 }
 
+// RESET
+
+function () {
+    
+}
+
 buttonPlayer1.addEventListener("click", modifyScorePlayer1);
 buttonPlayer2.addEventListener("click", modifyScorePlayer2);
