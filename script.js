@@ -9,9 +9,9 @@ const buttonPlayer1 = document.querySelectorAll("button")[0];
 const buttonPlayer2 = document.querySelectorAll("button")[1];
 const buttonReset = document.querySelectorAll("button")[2];
 
-let scoreP1 = 0
-let scoreP2 = 0
-let scoreMax = null
+let scoreP1 = 0;
+let scoreP2 = 0;
+let scoreMax = null;
 
 //  PLAYER 1
 
@@ -53,15 +53,16 @@ function scoreReset() {
     scorePlayer1.textContent = (scoreP1 = 0);
     scorePlayer2.textContent = (scoreP2 = 0);
     input.value = null;
-    scoreWinner.textContent = input.value;
+    scoreMax = null;     
+    scoreWinner.textContent = 0;
     scorePlayer1.classList.remove("winner"); 
-    scorePlayer2.classList.remove("winner");      
+    scorePlayer2.classList.remove("winner"); 
 }
 
 // SCORE WINNER
 
 function insertValueInputIntoSpan2() {    
-    scoreWinner.append(document.createTextNode(input.value));
+    scoreWinner.append(document.createTextNode(scoreMax));
 }
 
 function changeScoreWinner() {
@@ -69,8 +70,16 @@ function changeScoreWinner() {
     scoreMax = input.value;   
 }
 
+// RELOAD
+
+function loading() {
+    input.value = 5;
+    scoreMax = 5; 
+    scoreWinner.textContent = 5;   
+}
 
 buttonPlayer1.addEventListener("click", changeScorePlayer1);
 buttonPlayer2.addEventListener("click", changeScorePlayer2);
 buttonReset.addEventListener("click", scoreReset);
 input.addEventListener("click", changeScoreWinner);
+window.addEventListener("load", loading);
