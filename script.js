@@ -70,7 +70,7 @@ function changeScoreWinner() {
     scoreMax = input.value;   
 }
 
-// RELOAD
+// LOADING
 
 function loading() {
     input.value = 5;
